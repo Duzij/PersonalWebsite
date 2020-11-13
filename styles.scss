@@ -342,6 +342,7 @@ nav {
     display: flex;
     flex-direction: column;
     border-radius: 0 0 0 $base-unit;
+    font-size: calc(0.45em + 1vmin);
     div {
         display: inline-flex;
         align-items: center;
@@ -360,6 +361,63 @@ body {
 footer {
     margin: $base-unit*2;
     text-align: center;
+}
+
+@media (max-width: 650px) {
+    body {
+        nav {
+            z-index: 110;
+            border-left: 1px solid white;
+            border-bottom: 1px solid white;
+            background-color: black;
+            padding: $base-unit;
+            position: fixed;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: scroll;
+            border-radius: 0 0 0 $base-unit;
+            font-size: calc(0.45em + 1vmin);
+            div {
+                display: inline-flex;
+                align-items: center;
+            }
+            a {
+                margin-left: $base-unit/2;
+                display: flex;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    nav {
+        z-index: 110;
+        border-left: 0;
+        background-color: black;
+        border-radius: 0;
+        padding: 1rem;
+        right: 0;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        div {
+            padding-left: 1.5rem;
+            a {
+                padding-left: 0rem;
+            }
+        }
+    }
+    body {
+        .about {
+            .content {
+                img {
+                    max-height: 10rem;
+                    max-width: 10rem;
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 700px) {
